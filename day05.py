@@ -54,4 +54,10 @@ assert find_seatID(BoardingPass(PASS_EXAMPLE)) == 357
 if __name__ == "__main__":
     with open("inputs/day05.txt") as f:
         seat_ids = [find_seatID(BoardingPass(line)) for line in f]
-        print(max(seat_ids))
+        # Part 1
+        print(f"Part 1 - Max seat ID: {max(seat_ids)}")
+        # Part 2
+        seat_ids.sort()
+        for i in range(seat_ids[0], seat_ids[-1]+1):
+           if i not in seat_ids:
+                print(f"Part 2 - My seat ID: {i}")
